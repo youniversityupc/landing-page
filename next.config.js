@@ -7,4 +7,12 @@ module.exports = withBundleAnalyzer({
     domains: JSON.parse(process.env.STATIC_CONTENT_DOMAIN || "[]"),
   },
   productionBrowserSourceMaps: process.env.PRODUCTION_SOURCE_MAPS === "true",
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"]
+    });
+
+    return config;
+  },
 });
