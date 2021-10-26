@@ -1,6 +1,6 @@
 {
-  "name": "next-typescript-tailwind-starter",
-  "description": "Starter Next.js project using TypeScript, Tailwind and some DevTools preconfigured.",
+  "name": "youniversity-web",
+  "description": "YOUniversity landing page source code.",
   "version": "0.1.0",
   "private": true,
   "scripts": {
