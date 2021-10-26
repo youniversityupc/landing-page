@@ -1,65 +1,47 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import { Card } from '../components/card';
-import VercelSvg from '../../public/vercel.svg';
+import YOUniversity from '../../public/youniversity.svg';
+import GooglePlayBadge from '../../public/google-play-badge.svg';
+import AppStoreBadge from '../../public/app-store-badge.svg';
+import DividerSvg from '../../public/divider.svg';
 
 const Home = (): React.ReactElement | null => {
   return (
-    <div className="min-h-screen px-2 flex flex-col justify-center items-center">
+    <main>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>YOUniversity</title>
       </Head>
-
-      <main className="py-20 flex flex-1 flex-col justify-center items-center">
-        <h1 className="text-7xl text-center">
-          Welcome to <a href="https://nextjs.org" className="text-indigo-500 hover:underline focus:underline">Next.js!</a>
-        </h1>
-
-        <p className="text-2xl leading-6 mt-4">
-          Get started by editing{' '}
-          <code className="bg-gray-100 rounded p-2 text-lg font-mono">pages/index.js</code>
-        </p>
-
-        <div className="grid max-w-4xl mt-12">
-          <Card
-            title="Documentation &rarr;"
-            caption="Find in-depth information about Next.js features and API."
-            href="https://nextjs.org/docs"
-          />
-
-          <Card
-            title="Learn &rarr;"
-            caption="Learn about Next.js in an interactive course with quizzes!"
-            href="https://nextjs.org/learn"
-          />
-
-          <Card
-            title="Examples &rarr;"
-            caption="Discover and deploy boilerplate example Next.js projects."
-            href="https://github.com/vercel/next.js/tree/master/examples"
-          />
-
-          <Card
-            title="Deploy &rarr;"
-            caption="Instantly deploy your Next.js site to a public URL with Vercel."
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          />
+      <div className="bg-background lg:min-h-screen lg:max-h-screen flex flex-col lg:flex-row pt-8 lg:px-16 lg:py-0 relative">
+        <div className="hidden lg:block absolute min-h-screen max-h-screen top-0 right-0 z-0">
+          <DividerSvg className="min-h-screen max-h-screen w-auto text-primary" />
         </div>
-      </main>
-
-      <footer className="w-full h-24 border-t border-solid border-gray-200 flex justify-center items-center">
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className="flex justify-center items-center"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="mr-2">Powered by</span>
-          <Image src={VercelSvg} alt="Vercel Logo" layout="fixed" width={71} height={16} unoptimized={true} />
-        </a>
-      </footer>
-    </div>
+        <div className="px-8 lg:px-0 z-10 flex flex-col justify-center">
+          <div className="flex flex-col lg:flex-row items-center">
+            <YOUniversity className="h-16 lg:h-32 w-auto" />
+            <h1 className="mt-4 lg:mt-0 lg:ml-4 text-4xl lg:text-7xl text-primary font-semibold">
+              YOUniversity
+            </h1>
+          </div>
+          <div className="mt-8 lg:mt-16 text-3xl lg:text-5xl text-primary-darker font-medium text-center lg:text-left">
+            <span className="block">
+              La <span className="text-primary font-bold">universidad</span> a
+            </span>
+            <span className="block">
+              <span className="text-primary font-bold">tu</span> manera
+            </span>
+          </div>
+          <div className="mt-4 lg:mt-8 text-xl text-gray-600 font-medium text-center lg:text-left">
+            La organización que siempre quisiste, ahora en tu teléfono.
+          </div>
+          <div className="mt-8 flex flex-col lg:flex-row justify-center lg:justify-start items-center">
+            <GooglePlayBadge className="h-14 w-auto" />
+            <AppStoreBadge className="h-14 w-auto mt-4 lg:mt-0 lg:ml-4" />
+          </div>
+        </div>
+        <div className="mt-8 lg:mt-0 py-10 px-8 lg:py-0 lg:px-0 bg-primary lg:bg-transparent w-auto flex items-center justify-center lg:justify-end z-10">
+          <img src="/timetable@2x.png" className="h-5/6 w-auto rounded-md" />
+        </div>
+      </div>
+    </main>
   );
 };
 
