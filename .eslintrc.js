@@ -4,10 +4,10 @@ const rules = {
     2,
     { "SwitchCase": 1 }
   ],
-  "linebreak-style": [
-    "error",
-    "unix"
-  ],
+  // "linebreak-style": [
+  //   "error",
+  //   "unix"
+  // ],
   "semi": [
     "error",
     "always"
