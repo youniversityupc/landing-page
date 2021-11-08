@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import YOUniversity from '../../public/youniversity.svg';
 import GooglePlayBadge from '../../public/google-play-badge.svg';
-import AppStoreBadge from '../../public/app-store-badge.svg';
 import DividerSvg from '../../public/divider.svg';
 
 const Home = (): React.ReactElement | null => {
@@ -32,9 +31,8 @@ const Home = (): React.ReactElement | null => {
           <div className="mt-4 lg:mt-8 text-xl text-gray-600 font-medium text-center lg:text-left">
             La organización que siempre quisiste, ahora en tu teléfono.
           </div>
-          <div className="mt-8 flex flex-col lg:flex-row justify-center lg:justify-start items-center">
+          <div className="mt-8 flex justify-center lg:justify-start items-center">
             <GooglePlayBadge className="h-14 w-auto" />
-            <AppStoreBadge className="h-14 w-auto mt-4 lg:mt-0 lg:ml-4" />
           </div>
         </div>
         <div className="mt-8 lg:mt-0 py-10 px-8 lg:py-0 lg:px-0 bg-primary lg:bg-transparent w-auto flex items-center justify-center lg:justify-end z-10">
