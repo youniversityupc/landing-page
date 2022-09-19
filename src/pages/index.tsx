@@ -40,6 +40,7 @@ const Home = (): React.ReactElement | null => {
         textClassName="text-background text-4xl"
       />
       <Feature
+        inverted
         text="Organiza y añade tus horarios para mayor variedad"
         imageUrl="/timetable@2x.png"
         divClassName="bg-background"
