@@ -5,13 +5,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "NODE_ENV=production next build",
-    "start": "NODE_ENV=production next start",
-    "lint": "concurrently -s --kill-others-on-fail yarn:lint:*",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "lint": "concurrently -s yarn:lint:*",
     "lint:eslint": "eslint --ext .js,.ts,.tsx .",
     "lint:ts": "tsc --noemit",
     "lint:css": "stylelint **/*.css",
-    "analyze": "NODE_ENV=production ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@next/bundle-analyzer": "11.1.2",
