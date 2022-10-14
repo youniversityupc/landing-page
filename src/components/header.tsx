@@ -25,6 +25,11 @@ const navigation: NavItem[] = [
     href: "/#about-us",
     shallow: true,
   },
+  {
+    label: "Videos",
+    href: "/#videos",
+    shallow: true,
+  },
 ];
 
 interface HeaderProps {

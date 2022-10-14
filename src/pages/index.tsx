@@ -4,6 +4,7 @@ import { SectionDefinition } from '../types/sections';
 import { HeroSection } from '../sections/hero';
 import { FeaturesSection } from '../sections/features';
 import { AboutUsSection } from '../sections/about-us';
+import { VideosSection } from '../sections/videos';
 
 const sections: SectionDefinition[] = [
   {
@@ -17,6 +18,10 @@ const sections: SectionDefinition[] = [
   {
     id: 'about-us',
     component: AboutUsSection,
+  },
+  {
+    id: 'videos',
+    component: VideosSection,
   },
 ];
 
