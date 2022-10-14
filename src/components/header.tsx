@@ -4,7 +4,7 @@ import { Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import YOUniversity from '../../public/youniversity.svg';
 import clsx from 'clsx';
-import { useScrollDirection } from "../hooks/use-scroll-direction";
+import { useScrollDirection } from '../hooks/use-scroll-direction';
 
 interface NavItem {
   className?: string,
@@ -18,6 +18,11 @@ const navigation: NavItem[] = [
   {
     label: "Características",
     href: "/#features",
+    shallow: true,
+  },
+  {
+    label: "Nosotros",
+    href: "/#about-us",
     shallow: true,
   },
 ];

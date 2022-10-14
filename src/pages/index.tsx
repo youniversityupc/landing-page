@@ -3,6 +3,7 @@ import { Header } from '../components/header';
 import { SectionDefinition } from '../types/sections';
 import { HeroSection } from '../sections/hero';
 import { FeaturesSection } from '../sections/features';
+import { AboutUsSection } from '../sections/about-us';
 
 const sections: SectionDefinition[] = [
   {
@@ -12,6 +13,10 @@ const sections: SectionDefinition[] = [
   {
     id: 'features',
     component: FeaturesSection,
+  },
+  {
+    id: 'about-us',
+    component: AboutUsSection,
   },
 ];
 
