@@ -4,6 +4,7 @@ import { Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import YOUniversity from '../../public/youniversity.svg';
 import clsx from 'clsx';
+import { useScrollDirection } from "../hooks/use-scroll-direction";
 
 interface NavItem {
   className?: string,
@@ -26,8 +27,10 @@ interface HeaderProps {
 }
 
 export const Header = (props: HeaderProps): React.ReactElement => {
+  const scroll = useScrollDirection(10);
+
   return (
-    <header className={clsx(props.className, "h-24 sticky top-0 w-full z-50 transition-top")}>
+    <header className={clsx(props.className, "h-24 sticky top-0 w-full z-50 transition-top", scroll === "down" ? "-top-24" : "top-0")}>
       <Popover className="relative w-full">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex items-center justify-between py-6 md:space-x-10">
