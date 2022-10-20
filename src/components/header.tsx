@@ -84,36 +84,40 @@ export const Header = (props: HeaderProps): React.ReactElement => {
           leaveTo="opacity-0 scale-95"
         >
           <Popover.Panel focus className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
-            {({ close }) => (
-              <div className="rounded-lg bg-background shadow-lg ring-1 ring-black ring-opacity-5">
-                <div className="px-5 pt-5 pb-6">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <YOUniversity className="h-10 w-auto" />
+            {({ open, close }) => {
+              if (open && scroll === "down") close();
+
+              return (
+                <div className="rounded-lg bg-background shadow-lg ring-1 ring-black ring-opacity-5">
+                  <div className="px-5 pt-5 pb-6">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <YOUniversity className="h-10 w-auto" />
+                      </div>
+                      <div className="-mr-2">
+                        <Popover.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                          <span className="sr-only">Cerrar menú</span>
+                          <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                        </Popover.Button>
+                      </div>
                     </div>
-                    <div className="-mr-2">
-                      <Popover.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                        <span className="sr-only">Cerrar menú</span>
-                        <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                      </Popover.Button>
+                    <div className="mt-6">
+                      <nav className="grid gap-y-8">
+                        {navigation.map(item => (
+                          <Link key={item.href} href={item.href} shallow={item.shallow} scroll>
+                            <a className={clsx(item.className, "-m-3 flex items-center rounded-md p-3 hover:bg-gray-50")} onClick={() => close()}>
+                              <span className={clsx(item.labelClassName, "ml-3 text-base font-medium text-gray-900")}>
+                                {item.label}
+                              </span>
+                            </a>
+                          </Link>
+                        ))}
+                      </nav>
                     </div>
-                  </div>
-                  <div className="mt-6">
-                    <nav className="grid gap-y-8">
-                      {navigation.map(item => (
-                        <Link key={item.href} href={item.href} shallow={item.shallow} scroll>
-                          <a className={clsx(item.className, "-m-3 flex items-center rounded-md p-3 hover:bg-gray-50")} onClick={() => close()}>
-                            <span className={clsx(item.labelClassName, "ml-3 text-base font-medium text-gray-900")}>
-                              {item.label}
-                            </span>
-                          </a>
-                        </Link>
-                      ))}
-                    </nav>
                   </div>
                 </div>
-              </div>
-            )}
+              );
+            }}
           </Popover.Panel>
         </Transition>
       </Popover>
