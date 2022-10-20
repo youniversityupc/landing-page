@@ -4,6 +4,8 @@
 
 @layer base {
   html {
+    scroll-behavior: smooth;
+
     @apply font-inter antialiased;
   }
 
@@ -21,5 +23,17 @@
   a[disabled],
   button[disabled] {
     @apply cursor-default pointer-events-none;
+  }
+}
+
+@layer utilities {
+  .responsive-video {
+    aspect-ratio: 16 / 9;
+
+    @apply w-full;
+  }
+
+  .responsive-video iframe {
+    @apply w-full h-full;
   }
 }
