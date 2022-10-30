@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 class MyDocument extends Document {
   render(): React.ReactElement {
     return (
-      <Html>
+      <Html lang="es-419">
         <Head>
           <link rel="preconnect" href="https://rsms.me" />
           <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
